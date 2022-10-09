@@ -1,0 +1,49 @@
+.clients__list {
+   display: flex;
+    margin: -15px;
+    flex-wrap: wrap;
+}
+
+.clients__icon {
+    fill: currentColor;
+}
+
+.clients__link {
+    display: flex;
+    border: 1px solid var(--eleventh-color);
+    color: var(--eleventh-color);
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    transition: color var(--timing-function), border-color var(--timing-function);
+
+    &:hover,
+&:focus {
+    color: var(--fourth-color-blue);
+    border-color: var(--fourth-color-blue);
+}
+}
+.clients__item {
+    width: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
+}
+
+@media screen and (min-width: 1200px) {
+    .clients {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .clients__item {
+        width: calc((100% - 3 * 30px) / 3);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .clients__item {
+        width: calc((100% - 6 * 30px) / 6);
+    }
+}

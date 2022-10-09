@@ -1,0 +1,258 @@
+.backdrop {
+position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity var(--timing-function), visibility var(--timing-function);
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    min-height: 581px;
+    background-color: var(--third-color-white);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    @media screen and (min-width: 480px) {
+            width: 450px;
+            min-height: 609px;
+        }
+    
+        @media screen and (min-width: 1200px) {
+            width: 528px;
+            min-height: 581px;
+        }
+}
+.modal__btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--third-color-white);
+    transition: fill var(--timing-function);
+
+    &:hover,
+&:focus {
+    fill: var(--fourth-color-blue);
+}
+}
+
+.form-modal__title {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--secondary-color-black);
+    margin-bottom: 25px;
+}
+.form-modal{
+    margin-left: auto;
+        margin-right: auto;
+        padding: 40px;
+    
+        @media screen and (min-width: 480px) {
+            width: 450px;
+        }
+    
+        @media screen and (min-width: 1200px) {
+            width: 528px;
+        }
+}
+.form-modal__group {
+    margin-bottom: 20px;
+}
+.form-modal__label {
+    position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        line-height: 1.14;
+    @media screen and (max-width: 479px) {
+            font-size: 10px;
+            line-height: 1.11;
+        }
+    
+        @media screen and (min-width: 1200px) {
+            font-size: 14px;
+            line-height: 1.71;
+        }
+}
+.form-modal__textarea {
+    position: relative;
+    display: block;
+}
+.form-modal__text {
+    position: absolute;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--main-color-grey);
+    top: 50%;
+    left: 42px;
+    transform: translateY(-50%);
+    display: block;
+    transition: transform var(--timing-function);
+}
+.form-modal__input:focus+.form-modal__text,
+.form-modal__input:not(:placeholder-shown)+.form-modal__text {
+    transform: translate(-42px, -250%) scale(0.8);
+}
+.form-modal__input {
+    width: 100%;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: transparent;
+    transition: border-color var(--timing-function);
+
+    &:focus,
+&:not(:placeholder-shown) {
+    border-color: var(--fourth-color-blue);
+}
+}
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.form-field-chek {
+    padding-left: 0px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+        padding-left: 14px;
+    }
+}
+.form-modal__input::placeholder {
+    opacity: 0;
+    transition: opacity var(--timing-function);
+}
+.form-modal__input:focus::placeholder {
+    opacity: 1;
+}
+.form-modal__icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: fill var(--timing-function);
+}
+.form-modal__input:focus~.form-modal__icon,
+.form-modal__input:not(:placeholder-shown)~.form-modal__icon {
+    fill: var(--fourth-color-blue);
+}
+.form-modal__notification {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: block;
+}
+.form-modal__success,
+.form-modal__warning {
+    opacity: 0;
+    transition: opacity var(--timing-function);
+}
+.form-modal__warning {
+    fill: #e42312;
+}
+.form-modal__success {
+    fill: #00781c;
+}
+.form-modal__input:not(:placeholder-shown):focus:invalid~.form-modal__notification .form-modal__warning {
+    opacity: 1;
+}
+.form-modal__input:not(:placeholder-shown):focus:valid~.form-modal__notification .form-modal__success {
+    opacity: 1;
+}
+.form-modal__heading {
+    display: block;
+    margin-bottom: 4px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+}
+.form-modal__message {
+    display: block;
+    width: 100%;
+    height: 120px;
+    padding: 20px;
+    resize: none;
+    outline: transparent;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color var(--timing-function);
+
+    &:focus {
+    border-color: var(--fourth-color-blue);
+}
+}
+
+.form-modal__message::placeholder {
+    font-size: 14px;
+}
+.form-modal__agreement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.form-modal__checked {
+    opacity: 0;
+    fill: var(--fourth-color-blue);
+    transition: opacity var(--timing-function);
+}
+.form-modal__checkbox:checked+.form-modal__icons .form-modal__checked {
+    opacity: 1;
+}
+.form-modal__unchecked {
+    transition: opacity var(--timing-function);
+}
+.form-modal__checkbox:checked+.form-modal__icons .form-modal__unchecked {
+    opacity: 0;
+}
+.form-modal__checkbox:focus+.form-modal__icons {
+    outline: 2px solid rgb(56, 87, 107);
+    outline-offset: 1px;
+    border-radius: 2px;
+}
+.form-modal__desc {
+    user-select: none;
+}
+.form-modal__link {
+    margin-left: 3px;
+    color: var(--fourth-color-blue);
+    @media screen and (max-width: 479px) {
+            position: absolute;
+            top: 18px;
+            left: 21px;
+        }
+}
+.form-modal__btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 52px;
+}
