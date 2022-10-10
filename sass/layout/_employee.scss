@@ -1,8 +1,25 @@
 .employee {
-    padding-top: 94px 0;
     background: var(--seventh-color);
 }
 
+.employee__text {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    text-align: center;
+    color: var(--secondary-color-black);
+    margin-bottom: 18px;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 1.16;
+    }
+}
 .employee__list {
     display: flex;
     flex-wrap:wrap;
@@ -16,7 +33,7 @@
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     @media screen and (max-width: 479px) {
-            width: 270px;
+            width: 100%;
         }
     
         @media screen and (min-width: 480px) {

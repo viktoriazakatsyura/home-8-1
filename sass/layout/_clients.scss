@@ -1,3 +1,18 @@
+.clients__text {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    text-align: center;
+    color: var(--secondary-color-black);
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 1.16;
+    }
+}
+
 .clients__list {
    display: flex;
     margin: -15px;

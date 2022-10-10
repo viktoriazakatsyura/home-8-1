@@ -3,8 +3,8 @@
     border-bottom-style: solid;
     border-bottom-color: var(--tenth-color);
     @media screen and (max-width: 767px) {
-            padding-top: 16px;
-            padding-bottom: 16px;
+            padding-top: 10px;
+            padding-bottom: 9px;
         }
 }
 .header .container {
@@ -42,7 +42,7 @@ display: flex;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    color: var(--primary-text-color);
+    color: #212121;
 
     position: relative;
 
@@ -203,9 +203,9 @@ display: flex;
 
 .mob-menu-list__social {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-
-    column-gap: 20px;
+    column-gap: 15px;
 }
 
 .mob-menu-list__social-item {
