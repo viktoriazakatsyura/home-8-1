@@ -968,7 +968,7 @@ img {
   margin-left: 3px;
   color: var(--fourth-color-blue);
 }
-@media screen and (max-width: 479px) {
+@media screen and (width: 479px) {
   .form-modal__link {
     position: absolute;
     top: 18px;

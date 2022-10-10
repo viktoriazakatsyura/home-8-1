@@ -245,7 +245,7 @@ position: fixed;
 .form-modal__link {
     margin-left: 3px;
     color: var(--fourth-color-blue);
-    @media screen and (max-width: 479px) {
+    @media screen and (width: 479px) {
             position: absolute;
             top: 18px;
             left: 21px;
